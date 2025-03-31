@@ -1,4 +1,7 @@
 # Závěrečný projekt do BPC-DE1
 
-## Členové
+### Členové týmu
 * **Martin Živný**
+* **Vojtěch Šťastný**
+* **David Kaláb**
+* **Tomáš Kneř**
