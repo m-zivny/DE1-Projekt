@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="cfg_tb_top_level_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_top_level" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="98830000000fs"></ZoomStartTime>
+      <ZoomEndTime time="100118000001fs"></ZoomEndTime>
+      <Cursor1Time time="98908000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="26" />
+   <wvobject fp_name="/tb_top_level/CLK100MHZ" type="logic">
+      <obj_property name="ElementShortName">CLK100MHZ</obj_property>
+      <obj_property name="ObjectShortName">CLK100MHZ</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/TRIGGER" type="logic">
+      <obj_property name="ElementShortName">TRIGGER</obj_property>
+      <obj_property name="ObjectShortName">TRIGGER</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/ECHO" type="logic">
+      <obj_property name="ElementShortName">ECHO</obj_property>
+      <obj_property name="ObjectShortName">ECHO</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/AN" type="array">
+      <obj_property name="ElementShortName">AN[7:0]</obj_property>
+      <obj_property name="ObjectShortName">AN[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/CA" type="logic">
+      <obj_property name="ElementShortName">CA</obj_property>
+      <obj_property name="ObjectShortName">CA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/CB" type="logic">
+      <obj_property name="ElementShortName">CB</obj_property>
+      <obj_property name="ObjectShortName">CB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/CC" type="logic">
+      <obj_property name="ElementShortName">CC</obj_property>
+      <obj_property name="ObjectShortName">CC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/CD" type="logic">
+      <obj_property name="ElementShortName">CD</obj_property>
+      <obj_property name="ObjectShortName">CD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/CE" type="logic">
+      <obj_property name="ElementShortName">CE</obj_property>
+      <obj_property name="ObjectShortName">CE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/CF" type="logic">
+      <obj_property name="ElementShortName">CF</obj_property>
+      <obj_property name="ObjectShortName">CF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/CG" type="logic">
+      <obj_property name="ElementShortName">CG</obj_property>
+      <obj_property name="ObjectShortName">CG</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/DP" type="logic">
+      <obj_property name="ElementShortName">DP</obj_property>
+      <obj_property name="ObjectShortName">DP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/LED_16G" type="logic">
+      <obj_property name="ElementShortName">LED_16G</obj_property>
+      <obj_property name="ObjectShortName">LED_16G</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/LED_164R" type="logic">
+      <obj_property name="ElementShortName">LED_164R</obj_property>
+      <obj_property name="ObjectShortName">LED_164R</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/TbClock" type="logic">
+      <obj_property name="ElementShortName">TbClock</obj_property>
+      <obj_property name="ObjectShortName">TbClock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/TbSimEnded" type="logic">
+      <obj_property name="ElementShortName">TbSimEnded</obj_property>
+      <obj_property name="ObjectShortName">TbSimEnded</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/TbPeriod" type="other">
+      <obj_property name="ElementShortName">TbPeriod</obj_property>
+      <obj_property name="ObjectShortName">TbPeriod</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/dut/us_ctrl/state" type="other">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/dut/us_ctrl/en_load" type="logic">
+      <obj_property name="ElementShortName">en_load</obj_property>
+      <obj_property name="ObjectShortName">en_load</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/dut/us_ctrl/DIST_OUT" type="array">
+      <obj_property name="ElementShortName">DIST_OUT[8:0]</obj_property>
+      <obj_property name="ObjectShortName">DIST_OUT[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/dut/us_ctrl/was_sent" type="logic">
+      <obj_property name="ElementShortName">was_sent</obj_property>
+      <obj_property name="ObjectShortName">was_sent</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/dut/us_ctrl/can_send" type="logic">
+      <obj_property name="ElementShortName">can_send</obj_property>
+      <obj_property name="ObjectShortName">can_send</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/dut/seg_ctrl/US_IN" type="array">
+      <obj_property name="ElementShortName">US_IN[8:0]</obj_property>
+      <obj_property name="ObjectShortName">US_IN[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/dut/distance" type="array">
+      <obj_property name="ElementShortName">distance[8:0]</obj_property>
+      <obj_property name="ObjectShortName">distance[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/dut/binary_dist" type="array">
+      <obj_property name="ElementShortName">binary_dist[3:0]</obj_property>
+      <obj_property name="ObjectShortName">binary_dist[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_level/dut/binseg/bin" type="array">
+      <obj_property name="ElementShortName">bin[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bin[3:0]</obj_property>
+   </wvobject>
+</wave_config>
