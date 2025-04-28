@@ -95,7 +95,7 @@ end component clock_enable;
 
 signal distance : std_logic_vector (8 downto 0) := (others =>'0');
 signal enable_load : std_logic;
-signal binary_dist : std_logic_vector (3 downto 0) := (others =>'0');
+signal binary_dist : std_logic_vector (3 downto 0);
 signal switch_signal : std_logic;
 
 begin

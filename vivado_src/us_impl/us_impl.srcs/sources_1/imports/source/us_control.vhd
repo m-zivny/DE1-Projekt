@@ -61,6 +61,7 @@ begin
                         state <= IDLE;
                     end if;
                 when IDLE =>
+                    was_sent <= '0';
                     en_load <= '0';     
                 when others =>
                     TRIG <= '0';
