@@ -107,8 +107,18 @@ port (
            rst : in STD_LOGIC;
            pulse : out STD_LOGIC
 );
-
 end component clock_enable;
+
+component led_control is 
+generic(
+    threshold_cm : integer
+);
+port (
+    clk : in std_logic;
+    distance_cm    : in  STD_LOGIC_VECTOR (8 downto 0);
+    RGB_LED  : out STD_LOGIC_VECTOR (1 downto 0)
+);
+end component led_control;
 
 signal us1_distance : std_logic_vector (8 downto 0) := (others =>'0');
 signal us2_distance : std_logic_vector (8 downto 0) := (others =>'0');
@@ -187,6 +197,28 @@ port map (
     clk => CLK100MHZ,
     rst => '0',
     pulse => switch_signal
+);
+
+us1_led_ctrl : component led_control
+ generic map(
+    threshold_cm => 20
+)
+ port map(
+    clk => CLK100MHZ,
+    distance_cm => us1_distance,
+    RGB_LED(0) => LED_16G,
+    RGB_LED(1) => LED_16R
+);
+
+us2_led_ctrl : component led_control
+ generic map(
+    threshold_cm => 20
+)
+ port map(
+    clk => CLK100MHZ,
+    distance_cm => us2_distance,
+    RGB_LED(0) => LED_17G,
+    RGB_LED(1) => LED_17R
 );
 
 end Behavioral;
