@@ -8,13 +8,13 @@ entity us_control is
         ECHO         : in    std_logic := '0';
         DIST_OUT     : out   std_logic_vector (8 downto 0) := (others =>'0') ;
         clk          : in    std_logic;
-        switch_pulse : in    std_logic := '0';
-        en_load      : out   std_logic := '0'
+        en_load      : out   std_logic := '0';
+        switch_pulse : in std_logic := '0'
     );
 end us_control;
 
 architecture Behavioral of us_control is
-    type state_type is (TRIGGER, READ, SEND, INIT);
+    type state_type is (TRIGGER, READ, SEND, INIT, IDLE);
     signal state : state_type := INIT;
     constant TRIG_PERIODS : integer := 1000;
     constant ECHO_PERIODS : integer := 4000000;
@@ -22,6 +22,7 @@ architecture Behavioral of us_control is
     signal trig_count : integer range 0 to TRIG_PERIODS;
     signal echo_count : integer range 0 to ECHO_PERIODS;
     signal can_send : STD_LOGIC := '0';
+    signal was_sent : STD_LOGIC := '0';
 begin
 process(clk)
 begin
@@ -51,9 +52,17 @@ begin
                         can_send <='0';
                     end if;
                 when SEND =>
-                    echo_count <= echo_count/100000;
+                    echo_count <= echo_count/5800000;
                     en_load <= '1';
                     DIST_OUT <= STD_LOGIC_VECTOR(TO_UNSIGNED(echo_count, 9));
+                    if(was_sent = '0') then
+                        was_sent <= '1';
+                    else
+                        state <= IDLE;
+                    end if;
+                when IDLE =>
+                    was_sent <= '0';
+                    en_load <= '0';     
                 when others =>
                     TRIG <= '0';
                     state <= SEND;

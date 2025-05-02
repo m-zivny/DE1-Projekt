@@ -33,8 +33,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity top_level is
     Port ( CLK100MHZ : in STD_LOGIC;
-           TRIGGER : out STD_LOGIC;
-           ECHO : in STD_LOGIC;
+           US1_TRIGGER : out STD_LOGIC;
+           US2_TRIGGER : out STD_LOGIC;
+           US1_ECHO : in STD_LOGIC;
+           US2_ECHO : in STD_LOGIC;
            AN : out STD_LOGIC_VECTOR (7 downto 0);
            CA : out STD_LOGIC;
            CB : out STD_LOGIC;
@@ -45,19 +47,33 @@ entity top_level is
            CG : out STD_LOGIC;
            DP : out STD_LOGIC;
            LED_16G : out STD_LOGIC;
-           LED_164R : out STD_LOGIC);
+           LED_16R : out STD_LOGIC;
+           LED_17G : out STD_LOGIC;
+           LED_17R : out STD_LOGIC);
 end top_level;
 
 architecture Behavioral of top_level is
 
 component seg_control is
+    generic (
+        us1_stovky_pos : STD_LOGIC_VECTOR (7 downto 0) := (others => '1');
+        us1_desitky_pos : STD_LOGIC_VECTOR (7 downto 0) := (others => '1');
+        us1_jednotky_pos : STD_LOGIC_VECTOR (7 downto 0) := (others => '1');
+
+        us2_stovky_pos : STD_LOGIC_VECTOR (7 downto 0) := (others => '1');
+        us2_desitky_pos : STD_LOGIC_VECTOR (7 downto 0) := (others => '1');
+        us2_jednotky_pos : STD_LOGIC_VECTOR (7 downto 0) := (others => '1')
+
+    );
 port (
-        US_IN    : in  STD_LOGIC_VECTOR (8 downto 0); -- 0 az 400
+        US1_IN   : in  STD_LOGIC_VECTOR (8 downto 0); -- 0 az 400
+        US2_IN   : in  STD_LOGIC_VECTOR (8 downto 0); -- 0 az 400
         AN       : out STD_LOGIC_VECTOR (7 downto 0); -- anody (aktivní LOW)
         BIN_OUT  : out STD_LOGIC_VECTOR (3 downto 0); -- zvolený BCD digit
         clk      : in  STD_LOGIC;
-        LED_OUT  : out STD_LOGIC;
-        EN       : in  std_logic 
+        US1_EN  : in  STD_LOGIC;
+        US2_EN   : in  STD_LOGIC;  
+        RST      : in  STD_LOGIC 
         );
         
 end component seg_control;
@@ -77,7 +93,8 @@ port (
         DIST_OUT     : out   std_logic_vector (8 downto 0) := (others =>'0') ;
         clk          : in    std_logic;
         en_load      : out   std_logic := '0';
-        switch_pulse : in std_logic     
+        switch_pulse : in std_logic   ;
+        rst : in std_logic  
 );
 end component us_control;
 
@@ -93,33 +110,62 @@ port (
 
 end component clock_enable;
 
-signal distance : std_logic_vector (8 downto 0) := (others =>'0');
-signal enable_load : std_logic;
-signal binary_dist : std_logic_vector (3 downto 0) := (others =>'0');
+signal us1_distance : std_logic_vector (8 downto 0) := (others =>'0');
+signal us2_distance : std_logic_vector (8 downto 0) := (others =>'0');
+
+signal us1_enable_load : std_logic;
+signal us2_enable_load : std_logic;
+
+signal binary_dist : std_logic_vector (3 downto 0);
 signal switch_signal : std_logic;
 
 begin
 
-us_ctrl : component us_control
+us1_ctrl : component us_control
 port map (
     clk => CLK100MHZ,
-    TRIG => TRIGGER,
-    ECHO => ECHO,
-    DIST_OUT => distance,
-    en_load => enable_load,
-    switch_pulse => switch_signal
+    TRIG => US1_TRIGGER,
+    ECHO => US1_ECHO,
+    DIST_OUT => us1_distance,
+    en_load => us1_enable_load,
+    switch_pulse => switch_signal,
+    rst => '0'
 );
+
+us2_ctrl : component us_control
+    port map (
+        clk => CLK100MHZ,
+        TRIG => US2_TRIGGER,
+        ECHO => US2_ECHO,
+        DIST_OUT => us2_distance,
+        en_load => us2_enable_load,
+        switch_pulse => switch_signal,
+        rst => '0'
+);
+
 
 seg_ctrl : component seg_control
+generic map (
+    us1_stovky_pos => "11111011",
+    us1_desitky_pos => "11111101",
+    us1_jednotky_pos => "11111110",
+
+    us2_stovky_pos => "10111111",
+    us2_desitky_pos => "11011111",
+    us2_jednotky_pos => "11101111"
+)
 port map(
-    US_IN => distance,
-    AN => AN,
-    BIN_OUT => binary_dist,
-    clk => CLK100MHZ,
-    EN => enable_load
+        US1_IN => us1_distance,
+        US2_IN => us2_distance,  
+        AN     => AN,  
+        BIN_OUT => binary_dist, 
+        clk      => CLK100MHZ,
+        US1_EN  => us1_enable_load,
+        US2_EN  => us2_enable_load,
+        RST     => '0'
 );
 
-binseg : component bin2seg
+bintoseg : component bin2seg
 port map(
            clear => '0',
            bin => binary_dist, 

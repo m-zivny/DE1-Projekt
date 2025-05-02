@@ -9,7 +9,8 @@ entity us_control is
         DIST_OUT     : out   std_logic_vector (8 downto 0) := (others =>'0') ;
         clk          : in    std_logic;
         en_load      : out   std_logic := '0';
-        switch_pulse : in std_logic := '0'
+        switch_pulse : in std_logic := '0';
+        RST          : in std_logic := '0'
     );
 end us_control;
 
@@ -27,9 +28,14 @@ begin
 process(clk)
 begin
     if(rising_edge(clk)) then
-        if(switch_pulse = '1') then
-            state <= TRIGGER;
-        else
+        if(rst = '1') then
+            state <= IDLE;
+            TRIG <= '0';
+            DIST_OUT <= (others =>'0');
+            en_load <= '0';
+            trig_count <= 0;
+        end if;
+
             case state is 
                 when TRIGGER=>
                     en_load <= '0';
@@ -48,25 +54,25 @@ begin
                         can_send <= '1';
                         echo_count <= echo_count + 1;
                     elsif(ECHO = '0' and can_send = '1') then
+                        echo_count <= echo_count/5800;
                         state <= SEND;
                         can_send <='0';
                     end if;
+
                 when SEND =>
-                    echo_count <= echo_count/5800000;
                     en_load <= '1';
                     DIST_OUT <= STD_LOGIC_VECTOR(TO_UNSIGNED(echo_count, 9));
-                    if(was_sent = '0') then
-                        was_sent <= '1';
-                    else
-                        state <= IDLE;
-                    end if;
+                    state <= IDLE;
+
                 when IDLE =>
-                    en_load <= '0';     
+                    en_load <= '0';
+                     if switch_pulse = '1' then
+                        state <= TRIGGER;
+                     end if;
                 when others =>
                     TRIG <= '0';
-                    state <= SEND;
+                    state <= IDLE;
             end case;
-        end if;
     end if;
 end process;
 end Behavioral;

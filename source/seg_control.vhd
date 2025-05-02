@@ -15,7 +15,7 @@ architecture Behavioral of seg_control is
     signal digit2 : integer := 0; -- desítky
     signal digit3 : integer := 0; -- jednotky
     signal cnt    : integer range 0 to 2 := 0;
-    signal int_us : integer;
+    signal int_us : integer := 0;
 begin
     process(clk)
     begin
@@ -27,7 +27,7 @@ begin
                 digit1 <= int_us / 100;
                 digit2 <= (int_us / 10) mod 10;
                 digit3 <= int_us mod 10;
-            else
+            end if;
                 case cnt is
                     when 0 =>
                         BIN_OUT <= std_logic_vector(to_unsigned(digit3, 4));
@@ -47,7 +47,6 @@ begin
                     when others =>
                         cnt <= 0;
                 end case;
-            end if;
         end if;
     end process;
 end Behavioral;
