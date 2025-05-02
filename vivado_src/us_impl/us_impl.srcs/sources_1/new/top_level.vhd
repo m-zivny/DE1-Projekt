@@ -46,10 +46,10 @@ entity top_level is
            CF : out STD_LOGIC;
            CG : out STD_LOGIC;
            DP : out STD_LOGIC;
-           LED_16G : out STD_LOGIC;
-           LED_16R : out STD_LOGIC;
-           LED_17G : out STD_LOGIC;
-           LED_17R : out STD_LOGIC);
+           LED16_G : out STD_LOGIC;
+           LED16_R : out STD_LOGIC;
+           LED17_G : out STD_LOGIC;
+           LED17_R : out STD_LOGIC);
 end top_level;
 
 architecture Behavioral of top_level is
@@ -93,7 +93,8 @@ port (
         DIST_OUT     : out   std_logic_vector (8 downto 0) := (others =>'0') ;
         clk          : in    std_logic;
         en_load      : out   std_logic := '0';
-        switch_pulse : in std_logic   ;
+        switch_pulse : in std_logic;
+        continue : in std_logic;
         rst : in std_logic  
 );
 end component us_control;
@@ -128,6 +129,7 @@ signal us2_enable_load : std_logic;
 
 signal binary_dist : std_logic_vector (3 downto 0);
 signal switch_signal : std_logic;
+signal seg_en : std_logic;
 
 begin
 
@@ -139,6 +141,7 @@ port map (
     DIST_OUT => us1_distance,
     en_load => us1_enable_load,
     switch_pulse => switch_signal,
+    continue => seg_en,
     rst => '0'
 );
 
@@ -150,6 +153,7 @@ us2_ctrl : component us_control
         DIST_OUT => us2_distance,
         en_load => us2_enable_load,
         switch_pulse => switch_signal,
+        continue => seg_en,
         rst => '0'
 );
 
@@ -169,7 +173,7 @@ port map(
         US2_IN => us2_distance,  
         AN     => AN,  
         BIN_OUT => binary_dist, 
-        clk      => CLK100MHZ,
+        clk      => seg_en,
         US1_EN  => us1_enable_load,
         US2_EN  => us2_enable_load,
         RST     => '0'
@@ -189,14 +193,24 @@ port map(
            
 );
 
-clock_en : component clock_enable
+clock_us_en : component clock_enable
 generic map (
-    N_PERIODS => 5_000_000
+    N_PERIODS => 100_000_000
 )
 port map (
     clk => CLK100MHZ,
     rst => '0',
     pulse => switch_signal
+);
+
+clock_seg_en : component clock_enable
+generic map (
+    N_PERIODS => 1500
+)
+port map (
+    clk => CLK100MHZ,
+    rst => '0',
+    pulse => seg_en
 );
 
 us1_led_ctrl : component led_control
@@ -206,8 +220,8 @@ us1_led_ctrl : component led_control
  port map(
     clk => CLK100MHZ,
     distance_cm => us1_distance,
-    RGB_LED(0) => LED_16G,
-    RGB_LED(1) => LED_16R
+    RGB_LED(0) => LED16_G,
+    RGB_LED(1) => LED16_R
 );
 
 us2_led_ctrl : component led_control
@@ -217,8 +231,9 @@ us2_led_ctrl : component led_control
  port map(
     clk => CLK100MHZ,
     distance_cm => us2_distance,
-    RGB_LED(0) => LED_17G,
-    RGB_LED(1) => LED_17R
+    RGB_LED(0) => LED17_G,
+    RGB_LED(1) => LED17_R
 );
 
+DP <= '1';
 end Behavioral;
