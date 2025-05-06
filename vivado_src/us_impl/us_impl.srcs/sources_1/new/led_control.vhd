@@ -21,9 +21,9 @@ begin
         if(rising_edge(clk)) then
             dist_cm_int := to_integer(unsigned(distance_cm));
             if(dist_cm_int < threshold_cm) then
-                RGB_LED <= "10";
-            else
                 RGB_LED <= "01";
+            else
+                RGB_LED <= "10";
             end if;
         end if;
     end process;

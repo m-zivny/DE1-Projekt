@@ -85,21 +85,16 @@ begin
 
     stimuli : process
     begin
-        -- ***EDIT*** Adapt initialization as needed
-        US1_ECHO <= '0';
-        US2_ECHO <= '0';
-        wait for 60 ms;
-        US1_ECHO <= '1';
-        US2_ECHO <= '1';
-        wait for 13 ms;
-        US1_ECHO <= '0';
-        wait for 10 ms;
-        US2_ECHO <= '0';
-        wait for 27 ms;
-        -- ***EDIT*** Add stimuli here
-        -- Stop the clock and hence terminate the simulation
-        TbSimEnded <= '1';
-        wait;
+    US1_ECHO <= '0';
+    US2_ECHO <= '0';
+    wait for 110 ms;
+    US1_ECHO <= '1';
+    wait for 13 ms;
+    US1_ECHO <= '0';
+    US2_ECHO <= '1';
+    wait for 7 ms;
+    US2_ECHO <= '0';
+    wait for 20 ms;
     end process;
 
 end tb;
