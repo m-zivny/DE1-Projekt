@@ -66,8 +66,8 @@ component seg_control is
 
     );
 port (
-        US1_IN   : in  STD_LOGIC_VECTOR (8 downto 0); -- 0 az 400
-        US2_IN   : in  STD_LOGIC_VECTOR (8 downto 0); -- 0 az 400
+        US1_IN   : in  STD_LOGIC_VECTOR (9 downto 0); -- 0 az 400
+        US2_IN   : in  STD_LOGIC_VECTOR (9 downto 0); -- 0 az 400
         AN       : out STD_LOGIC_VECTOR (7 downto 0); -- anody (aktivní LOW)
         BIN_OUT  : out STD_LOGIC_VECTOR (3 downto 0); -- zvolený BCD digit
         clk      : in  STD_LOGIC;
@@ -90,7 +90,7 @@ component us_control is
 port (
         TRIG         : out   std_logic := '0';
         ECHO         : in    std_logic := '0';
-        DIST_OUT     : out   std_logic_vector (8 downto 0) := (others =>'0') ;
+        DIST_OUT     : out   std_logic_vector (9 downto 0) := (others =>'0') ;
         clk          : in    std_logic;
         en_load      : out   std_logic := '0';
         switch_pulse : in std_logic   
@@ -114,13 +114,13 @@ generic(
 );
 port (
     clk : in std_logic;
-    distance_cm    : in  STD_LOGIC_VECTOR (8 downto 0);
+    distance_cm    : in  STD_LOGIC_VECTOR (9 downto 0);
     RGB_LED  : out STD_LOGIC_VECTOR (1 downto 0)
 );
 end component led_control;
 
-signal us1_distance : std_logic_vector (8 downto 0) := (others =>'0');
-signal us2_distance : std_logic_vector (8 downto 0) := (others =>'0');
+signal us1_distance : std_logic_vector (9 downto 0) := (others =>'0');
+signal us2_distance : std_logic_vector (9 downto 0) := (others =>'0');
 
 signal us1_enable_load : std_logic;
 signal us2_enable_load : std_logic;

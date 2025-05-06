@@ -84,17 +84,26 @@ begin
     CLK100MHZ <= TbClock;
 
     stimuli : process
+        variable us1_echo_pulse : time := 5 us;
+        variable us2_echo_pulse : time := 13 us;
+        variable period : time := 100 us;
     begin
-    US1_ECHO <= '0';
-    US2_ECHO <= '0';
-    wait for 110 ms;
-    US1_ECHO <= '1';
-    wait for 13 ms;
-    US1_ECHO <= '0';
-    US2_ECHO <= '1';
-    wait for 7 ms;
-    US2_ECHO <= '0';
-    wait for 20 ms;
+        US1_ECHO <= '0';
+        US2_ECHO <= '0';
+        wait for 100025 ns;
+        for i in 1 to 20 loop
+        US1_ECHO <= '1';
+        US2_ECHO <= '1';
+        wait for us1_echo_pulse;
+        US1_ECHO <= '0';    
+        wait for (us2_echo_pulse-us1_echo_pulse);
+        US2_ECHO <= '0';
+        wait for (period - us2_echo_pulse + 10 ns);  
+        us1_echo_pulse := us1_echo_pulse + 1 us;
+        us2_echo_pulse := us2_echo_pulse + 1 us;
+        end loop;
+        TbSimEnded <= '1';
+        wait;
     end process;
 
 end tb;

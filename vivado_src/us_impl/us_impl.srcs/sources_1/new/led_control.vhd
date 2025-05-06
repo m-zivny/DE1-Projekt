@@ -8,7 +8,7 @@ entity led_control is
     );
     Port (
         clk : in std_logic;
-        distance_cm    : in  STD_LOGIC_VECTOR (8 downto 0);
+        distance_cm    : in  STD_LOGIC_VECTOR (9 downto 0);
         RGB_LED  : out STD_LOGIC_VECTOR (1 downto 0)
         ); -- vystup na RGB LED -- RGB_LED(1) = Red, RGB_LED(0) = Green
 end led_control;

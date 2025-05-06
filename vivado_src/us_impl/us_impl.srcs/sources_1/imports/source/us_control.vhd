@@ -6,7 +6,7 @@ entity us_control is
     Port(
         TRIG         : out   std_logic := '0';
         ECHO         : in    std_logic := '0';
-        DIST_OUT     : out   std_logic_vector (8 downto 0) := (others =>'0') ;
+        DIST_OUT     : out   std_logic_vector (9 downto 0) := (others =>'0') ;
         clk          : in    std_logic;
         en_load      : out   std_logic := '0';
         switch_pulse : in std_logic := '0'
@@ -44,14 +44,14 @@ begin
                         can_send <= '1';
                         echo_count <= echo_count + 1;
                     elsif(ECHO = '0' and can_send = '1') then
-                        echo_count <= echo_count/5800;
+                        echo_count <= echo_count/6;
                         state <= SEND;
                         can_send <='0';
                     end if;
 
                 when SEND =>
                     en_load <= '1';
-                    DIST_OUT <= STD_LOGIC_VECTOR(TO_UNSIGNED(echo_count, 9));
+                    DIST_OUT <= STD_LOGIC_VECTOR(TO_UNSIGNED(echo_count, 10));
                     state <= IDLE;
 
                 when IDLE =>

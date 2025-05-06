@@ -12,8 +12,8 @@ entity seg_control is
             us2_jednotky_pos : STD_LOGIC_VECTOR (7 downto 0) := (others => '1')
         );
     Port (
-        US1_IN   : in  STD_LOGIC_VECTOR (8 downto 0); -- 0 az 400
-        US2_IN   : in  STD_LOGIC_VECTOR (8 downto 0); -- 0 az 400
+        US1_IN   : in  STD_LOGIC_VECTOR (9 downto 0); -- 0 az 400
+        US2_IN   : in  STD_LOGIC_VECTOR (9 downto 0); -- 0 az 400
         AN       : out STD_LOGIC_VECTOR (7 downto 0); -- anody (aktivní LOW)
         BIN_OUT  : out STD_LOGIC_VECTOR (3 downto 0); -- zvolený BCD digit
         clk      : in  STD_LOGIC;
