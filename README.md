@@ -8,7 +8,7 @@
 * **Tomáš Kneř** (knertom) - implementace led_control, tvorba dokumentace
 
 ### Obsah
-
+[Použitý Hardware](#Použitý Hardware)
 
 
 ### Abstrakt
@@ -33,7 +33,7 @@ jak jsme přistupovali k návrhu
 CLOCK_ENABLE:
 Tento modul pochází z počítačových cvičení a umožňuje generovat hodinový signál s upravenou periodou.
 
-US_CONTROL:
+[US_CONTROL:]([https://github.com/m-zivny/DE1-Projekt/blob/main/source/seg_control.vhd](https://github.com/m-zivny/DE1-Projekt/blob/main/source/us_control.vhd))
 Náš vlastní modul US_CONTROL se stará o komunikaci s ultrazvukovým senzorem HS-SR04. Vysílá pulz trigger a příjimá pulz echo. Násedně změří dobu trvání pulzu echo, ze které vypočítá vzdálenost překážky od senzoru. Dále tuto vzdálenost posílá na další zpracování do modulu SEG_CONTROL. V návrh používáme dvě instance tohoto modulu, pro každý senzor jednu.
 
 [SEG_CONTROL:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/seg_control.vhd)
