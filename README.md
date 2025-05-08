@@ -102,6 +102,9 @@ https://github.com/user-attachments/assets/3c3cfd26-f967-455a-bc51-f47ca1241e27
 
 ## Reference
 https://github.com/tomas-fryza/vhdl-labs
+
 https://www.microcontrollertips.com/principle-applications-limitations-ultrasonic-sensors-faq/ 
+
 https://digilent.com/reference/programmable-logic/nexys-a7/start
+
 https://vhdl.lapinoo.net/
