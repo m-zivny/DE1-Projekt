@@ -26,10 +26,10 @@ architecture tb of tb_top_level is
               CF          : out std_logic;
               CG          : out std_logic;
               DP          : out std_logic;
-              LED_16G     : out std_logic;
-              LED_16R     : out std_logic;
-              LED_17G     : out std_logic;
-              LED_17R     : out std_logic);
+              LED16_G     : out std_logic;
+              LED16_R     : out std_logic;
+              LED17_G     : out std_logic;
+              LED17_R     : out std_logic);
     end component;
 
     signal CLK100MHZ   : std_logic;
@@ -46,11 +46,10 @@ architecture tb of tb_top_level is
     signal CF          : std_logic;
     signal CG          : std_logic;
     signal DP          : std_logic;
-    signal LED_16G     : std_logic;
-    signal LED_16R     : std_logic;
-    signal LED_17G     : std_logic;
-    signal LED_17R     : std_logic;
-
+    signal LED16_G     : std_logic;
+    signal LED16_R     : std_logic;
+    signal LED17_G     : std_logic;
+    signal LED17_R     : std_logic;
     constant TbPeriod : time := 10 ns; -- ***EDIT*** Put right period here
     signal TbClock : std_logic := '0';
     signal TbSimEnded : std_logic := '0';
@@ -72,10 +71,10 @@ begin
               CF          => CF,
               CG          => CG,
               DP          => DP,
-              LED_16G     => LED_16G,
-              LED_16R     => LED_16R,
-              LED_17G     => LED_17G,
-              LED_17R     => LED_17R);
+              LED16_G     => LED16_G,
+              LED16_R     => LED16_R,
+              LED17_G     => LED17_G,
+              LED17_R     => LED17_R);
 
     -- Clock generation
     TbClock <= not TbClock after TbPeriod/2 when TbSimEnded /= '1' else '0';
@@ -91,16 +90,21 @@ begin
         US1_ECHO <= '0';
         US2_ECHO <= '0';
         wait for 100025 ns;
-        for i in 1 to 20 loop
+        for i in 1 to 160 loop
         US1_ECHO <= '1';
         US2_ECHO <= '1';
         wait for us1_echo_pulse;
         US1_ECHO <= '0';    
         wait for (us2_echo_pulse-us1_echo_pulse);
         US2_ECHO <= '0';
-        wait for (period - us2_echo_pulse + 10 ns);  
-        us1_echo_pulse := us1_echo_pulse + 1 us;
-        us2_echo_pulse := us2_echo_pulse + 1 us;
+        wait for (period - us2_echo_pulse + 10 ns); 
+        if ((us1_echo_pulse < 40 us)and (us2_echo_pulse < 40 us)) then
+            us1_echo_pulse := us1_echo_pulse + 1 us;
+            us2_echo_pulse := us2_echo_pulse + 1 us;
+        else
+            us1_echo_pulse := 5 us;
+            us2_echo_pulse := 13 us;
+        end if;
         end loop;
         TbSimEnded <= '1';
         wait;
