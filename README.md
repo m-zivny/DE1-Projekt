@@ -96,7 +96,6 @@ Detail na multiplexing displejů:
 https://github.com/user-attachments/assets/3c3cfd26-f967-455a-bc51-f47ca1241e27
 
 
-## Závěr:
+## Závěr
 
-## Reference: 
-####
+## Reference:
