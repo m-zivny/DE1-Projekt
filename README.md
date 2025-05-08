@@ -89,7 +89,8 @@ Detail na impulz TRIGGER modulu US_CONTROL:
 ![seg_control_tb](https://github.com/user-attachments/assets/1a4a7b75-4b2d-4927-a5be-d9e1152bba04)
 
 #### [Simulace modulu LED_CONTROL:](https://github.com/m-zivny/DE1-Projekt/blob/main/tb_source/tb_led_control.vhd)
-![led_control_tb](https://github.com/user-attachments/assets/fad83693-e4a4-488b-a4c1-c561e39b318f)
+![led_control_tb_v2](https://github.com/user-attachments/assets/8ed5f628-2aa5-40f6-a143-fa622c763c3e)
+
 
 #### [Simulace modulu TOP_LEVEL:](https://github.com/m-zivny/DE1-Projekt/blob/main/tb_source/tb_top_level.vhd)
 ![top_level_tb](https://github.com/user-attachments/assets/567f1f05-7441-4c58-a727-89ecc57a99b5)
