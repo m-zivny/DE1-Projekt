@@ -71,16 +71,16 @@ Tento modul neupravený verze modulu který jsme používali na počítačových
 
 
 #### Simulace
-Simulace modulu US_CONTROL:
+[Simulace modulu US_CONTROL:](https://github.com/m-zivny/DE1-Projekt/blob/main/tb_source/tb_us_control.vhd)
 ![us_control_full](https://github.com/user-attachments/assets/cdfb0f8c-7eed-418b-a570-02c056111fc6)
 
-Detail na impulz TRIGGER moduku US_CONTROL:
+Detail na impulz TRIGGER modulu US_CONTROL:
 ![us_control_trig](https://github.com/user-attachments/assets/cecaf2dc-e2bb-43c8-ab27-d6e014c34728)
 
-Simulace modulu SEG_CONTROL:
+[Simulace modulu SEG_CONTROL:](https://github.com/m-zivny/DE1-Projekt/blob/main/tb_source/tb_seg_control.vhd)
 ![seg_control_tb](https://github.com/user-attachments/assets/1a4a7b75-4b2d-4927-a5be-d9e1152bba04)
 
-Simulace modulu LED_CONTROL:
+[Simulace modulu LED_CONTROL:](https://github.com/m-zivny/DE1-Projekt/blob/main/tb_source/tb_led_control.vhd)
 ![led_control_tb](https://github.com/user-attachments/assets/fad83693-e4a4-488b-a4c1-c561e39b318f)
 
 Simulace modulu TOP_LEVEL:
