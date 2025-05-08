@@ -24,6 +24,7 @@
 * [Závěr](#Závěr)
 * [Reference](#Reference)
 
+![Poster](https://github.com/user-attachments/assets/020fc9dd-f6c4-4598-b914-8ed39e46c89e)
 
 
 ## Abstrakt
