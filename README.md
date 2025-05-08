@@ -100,7 +100,7 @@ https://github.com/user-attachments/assets/3c3cfd26-f967-455a-bc51-f47ca1241e27
 
 
 ## Závěr
-V průběhu testování jsme zjistili problém, který se pravděpodobně objevil v řídicí logice modulu pro zpracování signálů ze senzorů US_CONTROL, konkrétně v mechanismu spouštění měření a řízení stavového automatu. Problém nastává, kdy po pár sekundách se celé měření vzdálenosti a signalizace obsazenosti zastaví na poslední hodnotě, které senzory detekovali.Přes veškeré úpravy kódu jsme nedokázali daný problém vyřešit.
+I přes detailní analýzu testbenchů se nám nepodařilo bezchybně implementovat náš návrh. Celý systém se zastaví na poslední změřené hodnotě. I přes veškeré debugování se nám nepodařilo tento problém vyřešit. 
 
 ## Reference
 https://github.com/tomas-fryza/vhdl-labs
