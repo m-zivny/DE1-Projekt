@@ -8,17 +8,17 @@
 * **Tomáš Kneř** (knertom) - implementace led_control, tvorba dokumentace
 
 ### Obsah
-[Abstrakt](#Abstrakt)
+* [Abstrakt](#Abstrakt)
 
-[Hardware](#Hardware)
+* [Hardware](#Hardware)
 
-[Software](#Software)
+* [Software](#Software)
 
-[Simulace](#Simulace)
+* [Simulace](#Simulace)
 
-[Praktická ukázka](#Praktická-ukázka)
+* [Praktická ukázka](#Praktická-ukázka)
 
-[Závěr](#Závěr)
+* [Závěr](#Závěr)
 
 
 
