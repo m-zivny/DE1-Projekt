@@ -10,11 +10,11 @@
 ### Obsah
 * ####[Abstrakt](#Abstrakt)
 
-* ####[Hardware](#Hardware)
+* #### [Hardware](#Hardware)
    - [Použitý Hardware](#Použitý-Hardware)
    - [Zapojení](#Zapojení)
    - [Měření](#Měření)
-* ####[Software](#Software)
+* #### [Software](#Software)
    - [Architektura](#Architektura)
    - [Moduly](#Moduly)
    - [Simulace](#Simulace)
