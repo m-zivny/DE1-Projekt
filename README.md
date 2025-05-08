@@ -19,9 +19,9 @@
    - [Moduly](#Moduly)
    - [Simulace](#Simulace)
 
-* #### [Praktická ukázka](#Praktická-ukázka)
+* #### [Praktická ukázka](#Praktická-ukázka:)
 
-* #### [Závěr](#Závěr)
+* #### [Závěr](#Závěr:)
 
 
 
@@ -92,8 +92,8 @@ Detail na impulz TRIGGER modulu US_CONTROL:
 Detail na multiplexing displejů:
 ![top_level_multiplex](https://github.com/user-attachments/assets/d5138d27-0927-460f-ae1c-aa13ab3939b9)
 
-### Praktická ukázka
+### Praktická ukázka:
 https://github.com/user-attachments/assets/3c3cfd26-f967-455a-bc51-f47ca1241e27
 
 
-### Závěr
+### Závěr:
