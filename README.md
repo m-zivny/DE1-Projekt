@@ -100,7 +100,7 @@ https://github.com/user-attachments/assets/3c3cfd26-f967-455a-bc51-f47ca1241e27
 
 
 ## Závěr
-I přes detailní analýzu testbenchů se nám nepodařilo bezchybně implementovat náš návrh. Celý systém se zastaví na poslední změřené hodnotě. I přes veškeré debugování se nám nepodařilo tento problém vyřešit. 
+I přes detailní analýzu testbenchů se nám nepodařilo bezchybně implementovat náš návrh. Celý systém se po pár sekundách zastaví na poslední změřené hodnotě. I přes veškeré debugování se nám nepodařilo tento problém vyřešit. 
 
 ## Reference
 https://github.com/tomas-fryza/vhdl-labs
