@@ -27,7 +27,7 @@
 
 
 ## Abstrakt
-Tento projekt se zabývá návrhem a implementací systému pro měření vzdálenosti pomocí dvou externě připojených ultrazvukových senzorů a zobrazení naměřených hodnot na osmi vestavěných 7segmentových displejích vývojového kitu FPGA Nexys A7 50T. Celý systém je implementován v jazyce VHDL ve vývojovém prostředí Vivado. Projekt zahrnuje návrh řídicí logiky pro ultrazvukové senzory, která generuje spouštěcí signály a zpracovává přijaté echo signály pro určení vzdálenosti. Následně jsou naměřené vzdálenosti převedeny na číselnou formu a zobrazeny na 7segmentových displejích pomocí multiplexování. Během vývoje bylo zjištěno, že po přibližně pěti sekundách provozu dochází k zastavení měření. Analýza ukázala, že příčinou je pravděpodobně problém v řídicí logice modulu pro zpracování signálů ze senzorů, konkrétně v mechanismu spouštění měření a řízení stavového automatu. Tento abstrakt shrnuje cíle projektu, použité technologie a identifikovaný problém, který bude dále řešen pro zajištění spolehlivého a kontinuálního měření vzdálenosti.
+Tento projekt se zabývá návrhem a implementací systému pro měření vzdálenosti pomocí dvou externě připojených ultrazvukových senzorů a zobrazení naměřených hodnot na šesti vestavěných 7segmentových displejích vývojového FPGA kitu Nexys A7-50T. Celý systém je implementován v jazyce VHDL. Projekt zahrnuje návrh řídicí logiky pro ultrazvukové senzory, která generuje spouštěcí signály TRIGGER a zpracovává přijaté signály ECHO pro určení vzdálenosti. Následně jsou naměřené vzdálenosti zobrazeny na 7segmentových displejích pomocí multiplexování a "obsazenost" parkovacího místa je signalizována pomocí změny barvy dvojice RGB LED. 
 
 ## Hardware
 ### Použitý Hardware
