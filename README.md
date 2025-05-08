@@ -9,10 +9,15 @@
 
 ### Obsah
 [Abstrakt](#Abstrakt)
+
 [Hardware](#Hardware)
+
 [Software](#Software)
+
 [Simulace](#Simulace)
+
 [Praktická ukázka](#Praktická-ukázka)
+
 [Závěr](#Závěr)
 
 
