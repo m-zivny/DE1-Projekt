@@ -69,6 +69,7 @@ Tento modul neupravený verze modulu který jsme používali na počítačových
 
 
 #### [TOP LEVEL:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/top_level.vhd)
+V modulu TOP_LEVEL propojujeme jednotlivé dílční moduly nebo jejich instance.
 ![toplevel](https://github.com/user-attachments/assets/3f0d52c3-7c77-478b-8962-de6d3ec8b30f)
 
 
