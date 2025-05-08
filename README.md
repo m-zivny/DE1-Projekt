@@ -32,7 +32,7 @@ Pro náš projekt jsme použili vývojový FPGA kit Nexys A7 50T, dvojici ultraz
 
 #### Zapojení
 V následujícím schématu je znázorněno jak jsou senzory připojeny k FPGA. Ke komunikaci se senzory využíváme port pro připojení externích periferií Pmod JD, kterým vývojový kit disponuje.
-<img width="854" alt="zapojeni" src="https://github.com/user-attachments/assets/7a60f675-ea82-43ee-afef-9f2f85922a9a" />
+![zapojeniv2](https://github.com/user-attachments/assets/d6282096-7043-456d-971a-49907e19c370)
 
 #### Měření
 Na obrazovce osciloskopu vidíme na kanálu č. 1 signál TRIG (žlutý), který přivádíme na senzor a signál ECHO (zelený) na kanálu č.2, který jde ze senzoru na vstup FPGA.
