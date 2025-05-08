@@ -31,7 +31,7 @@ Pro náš projekt jsme použili vývojový FPGA kit Nexys A7 50T, dvojici ultraz
 ![hw](https://github.com/user-attachments/assets/ea75325f-01d0-4f6b-a881-0d444ac850b0)
 
 #### Zapojení
-V následujícím schématu je znázorněno jak jsou senzory připojeny k FPGA.
+V následujícím schématu je znázorněno jak jsou senzory připojeny k FPGA. Ke komunikaci se senzory využíváme port pro připojení externích periferií Pmod JD, kterým vývojový kit disponuje.
 
 #### Měření
 ![scope](https://github.com/user-attachments/assets/62840a5c-8e9b-4ab0-b882-ae49c31bd4ba)
