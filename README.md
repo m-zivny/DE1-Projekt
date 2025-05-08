@@ -44,7 +44,8 @@ Na obrazovce osciloskopu vidíme na kanálu č. 2 signál TRIG (zelený), který
 
 ## Software
 ### Architektura
-jak jsme přistupovali k návrhu
+
+Program byl rozdělen do jednotlivých modulů, z nichž každý má svou specifickou funkci. Cílem tohoto návrhu byla možnost jednoduché úpravy jednotlivých částí kódu.
 
 ### Moduly
 #### [CLOCK_ENABLE:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/clock_enable.vhd) 
@@ -53,19 +54,19 @@ Tento modul pochází z počítačových cvičení a umožňuje generovat hodino
 
 #### [US_CONTROL:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/us_control.vhd)
 
-Náš vlastní modul US_CONTROL se stará o komunikaci s ultrazvukovým senzorem HS-SR04. Vysílá pulz trigger a příjimá pulz echo. Násedně změří dobu trvání pulzu echo, ze které vypočítá vzdálenost překážky od senzoru. Dále tuto vzdálenost posílá na další zpracování do modulu SEG_CONTROL. V návrh používáme dvě instance tohoto modulu, pro každý senzor jednu.
+Náš vlastní modul US_CONTROL se stará o komunikaci s ultrazvukovým senzorem HS-SR04. Vysílá pulz trigger a příjimá pulz echo. Násedně změří dobu trvání pulzu echo, ze které vypočítá vzdálenost překážky od senzoru. Dále tuto vzdálenost posílá na další zpracování do modulu SEG_CONTROL. V návrhu používáme dvě instance tohoto modulu, pro každý senzor jednu.
 
 #### [SEG_CONTROL:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/us_control.vhd)
 
-Tento modul jsme vytvořili tak, aby dokázal přijmout dva různé signály 10bitové signály obsahuzíjí vzdálenost z instancí modulů US_CONTROL a následně se stará o multiplexování jednolivých digitů 7segmentových displejů na desce Nexys A7-50T. Výstupem tohoto modulu je signál který se stará o samotné přepínání aktivního digitu a druhý signál obsahující binární vyjádření hodnotu kterou chceme zobrazovat na atkivním digitu. 
+Tento modul jsme vytvořili tak, aby dokázal přijmout dva různé signály 10bitové signály obsahuzíjí vzdálenost z instancí modulů US_CONTROL a následně se stará o multiplexování jednolivých digitů 7segmentových displejů na desce Nexys A7-50T. Výstupem tohoto modulu je signál, který se stará o samotné přepínání aktivního digitu a druhý signál obsahující binární vyjádření hodnoty kterou chceme zobrazovat na aktivním digitu. 
 
 #### [BIN2SEG:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/bin2seg.vhd)
 
-Tento modul neupravený verze modulu který jsme používali na počítačových cvičeních. Stará se o to, že vezme binární signál s číselnou hodnotou z modulu SEG_CONTROL a převede ho na signál vhodný pro aktivací jednotlivých segmentů aktivního digitu 7segmentového displeje. 
+Neupravená verze modulu z počítačových cvičení. Převádí přijatý 4bitový signál na signály, které řídí segmenty aktivního digitu 7segmentového displeje.
 
 #### [LED_CONTROL:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/led_control.vhd)
 
-Účelem tohoto modulu je ovládání signalizačních RGB LED na desce. Vstupem tohoto modulu je signál s hodnotou vzdálenosti změřenou ultrazvukovým senzorem a porovnávání s námi nastavenou úrovní. Je-li tato úroveň překročena (vzdálenost překáždy je větší než nastavená úrověň), LED svítí zelenou barvou (parkovací místo je volné), pokud je naopak vzdálenost menší (vzdálenost překážky je měnší než nastavená úroveň), svítí LED červenou barvou (parkovací místo je obsazeno). Používáme opět dvě instance tohoto modulu, každou pro jeden senzor.
+Modul řídí RGB led která signalizuje obsazenost parkovacího místa. Vzdálenosti získává z modulu US_CONTROL. Používáme 2 instance tohoto modulu.
 
 
 #### [TOP LEVEL:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/top_level.vhd)
