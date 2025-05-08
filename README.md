@@ -39,7 +39,7 @@ V následujícím schématu je znázorněno jak jsou senzory připojeny k FPGA. 
 ![zapojeniv2](https://github.com/user-attachments/assets/d6282096-7043-456d-971a-49907e19c370)
 
 ### Měření
-Na obrazovce osciloskopu vidíme na kanálu č. 1 signál TRIG (zelený), který přivádíme na senzor a signál ECHO (žlutý) na kanálu č.2, který jde ze senzoru na vstup FPGA.
+Na obrazovce osciloskopu vidíme na kanálu č. 2 signál TRIG (zelený), který přivádíme na senzor a signál ECHO (žlutý) na kanálu č. 1, který jde ze senzoru na vstup FPGA.
 ![scope](https://github.com/user-attachments/assets/62840a5c-8e9b-4ab0-b882-ae49c31bd4ba)
 
 ## Software
