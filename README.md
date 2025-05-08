@@ -31,7 +31,7 @@ Tento projekt se zabývá návrhem a implementací systému pro měření vzdál
 
 ## Hardware
 ### Použitý Hardware
-Pro náš projekt jsme použili vývojový FPGA kit Nexys A7 50T, dvojici ultrazvukových senzorů vzdálenosti HS-SR04 a z důvodů rozdílných úrovní logických signálu vývojové desky a senzorů také obousměrný převodník logické úrovně. Dále jsme použili Arduino UNO, jako zdroj 5V pro senzory.
+Pro náš projekt jsme použili vývojový FPGA kit Nexys A7-50T, dvojici ultrazvukových senzorů vzdálenosti HS-SR04 a z důvodů rozdílných úrovní logických signálu vývojové desky a senzorů také obousměrný převodník logické úrovně. Dále jsme použili Arduino UNO, jako zdroj 5V pro senzory.
 ![hw](https://github.com/user-attachments/assets/ea75325f-01d0-4f6b-a881-0d444ac850b0)
 
 ### Zapojení
@@ -57,7 +57,7 @@ Náš vlastní modul US_CONTROL se stará o komunikaci s ultrazvukovým senzorem
 
 #### [SEG_CONTROL:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/us_control.vhd)
 
-Tento modul jsme vytvořili tak, aby dokázal přijmout dva různé signály 10bitové signály obsahuzíjí vzdálenost z instancí modulů US_CONTROL a následně se stará o multiplexování jednolivých digitů 7segmentových displejů na desce Nexys A7 50T. Výstupem tohoto modulu je signál který se stará o samotné přepínání aktivního digitu a druhý signál obsahující binární vyjádření hodnotu kterou chceme zobrazovat na atkivním digitu. 
+Tento modul jsme vytvořili tak, aby dokázal přijmout dva různé signály 10bitové signály obsahuzíjí vzdálenost z instancí modulů US_CONTROL a následně se stará o multiplexování jednolivých digitů 7segmentových displejů na desce Nexys A7-50T. Výstupem tohoto modulu je signál který se stará o samotné přepínání aktivního digitu a druhý signál obsahující binární vyjádření hodnotu kterou chceme zobrazovat na atkivním digitu. 
 
 #### [BIN2SEG:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/bin2seg.vhd)
 
