@@ -84,6 +84,10 @@ Detail na impulz TRIGGER modulu US_CONTROL:
 ![led_control_tb](https://github.com/user-attachments/assets/fad83693-e4a4-488b-a4c1-c561e39b318f)
 
 ##### Simulace modulu TOP_LEVEL:
+![top_level_tb](https://github.com/user-attachments/assets/567f1f05-7441-4c58-a727-89ecc57a99b5)
+
+Detail na multiplexing displejů:
+![top_level_multiplex](https://github.com/user-attachments/assets/d5138d27-0927-460f-ae1c-aa13ab3939b9)
 
 ### Praktická ukázka
 https://github.com/user-attachments/assets/3c3cfd26-f967-455a-bc51-f47ca1241e27
