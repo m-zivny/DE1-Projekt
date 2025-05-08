@@ -1,13 +1,13 @@
 # Automatizovaný systém chytrého parkovacího domu
-## Závěrečný projekt BPC-DE1
+### Závěrečný projekt BPC-DE1
 
-### Členové týmu
+## Členové týmu
 * **Martin Živný** (m-zivny) - návrh top-levelu, implementace modulu us_control
 * **Vojtěch Šťastný** (256701) - logický návrh, návrh téma projektu, tvorba dokumentace
 * **David Kaláb** (DKEBCZ) - implementace seg_control a modulů ze cvičení  
 * **Tomáš Kneř** (knertom) - implementace led_control, tvorba dokumentace
 
-### Obsah
+## Obsah
 * [Abstrakt](#Abstrakt)
 
 * [Hardware](#Hardware)
