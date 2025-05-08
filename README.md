@@ -11,20 +11,18 @@
 * #### [Abstrakt](#Abstrakt)
 
 * #### [Hardware](#Hardware)
-   - ##### [Použitý Hardware](#Použitý-Hardware)
-   - ##### [Zapojení](#Zapojení)
-   - ##### [Měření](#Měření)
-   - 
+   - [Použitý Hardware](#Použitý-Hardware)
+   - [Zapojení](#Zapojení)
+   - [Měření](#Měření)
 * #### [Software](#Software)
-   - ##### [Architektura](#Architektura)
-   - ##### [Moduly](#Moduly)
-    - ###### [CLOCK_ENABLE](#CLOCK_ENABLE:)
-    - ###### [US_CONTROL](#US_CONTROL:)
-    - ###### [SEG_CONTROL](#SEG_CONTROL:)
-    - ###### [BIN2SEG](#BIN2SEG:)
-    - ###### [LED_CONTROL](#LED_CONTROL:)
-    - ###### [TOP_LEVEL](#TOP_LEVEL:)
-
+   - [Architektura](#Architektura)
+   - [Moduly](#Moduly)
+     - [CLOCK_ENABLE](#CLOCK_ENABLE:)
+     - [US_CONTROL](#US_CONTROL:)
+     - [SEG_CONTROL](#SEG_CONTROL:)
+     - [BIN2SEG](#BIN2SEG:)
+     - [LED_CONTROL](#LED_CONTROL:)
+     - [TOP_LEVEL](#TOP_LEVEL:)
 
 * #### [Simulace](#Simulace)
 
