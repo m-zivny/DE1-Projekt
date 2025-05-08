@@ -17,7 +17,7 @@
 * #### [Software](#Software)
    - [Architektura](#Architektura)
    - [Moduly](#Moduly)
-     - [CLOCK_ENABLE](#CLOCK_ENABLE:)
+     - [CLOCK_ENABLE](#[CLOCK_ENABLE:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/clock_enable.vhd))
      - [US_CONTROL](#US_CONTROL:)
      - [SEG_CONTROL](#SEG_CONTROL:)
      - [BIN2SEG](#BIN2SEG:)
