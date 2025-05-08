@@ -68,7 +68,14 @@ Tento modul neupravený verze modulu který jsme používali na počítačových
 
 
 #### Simulace
-screeny (nebo video?) simulace
+Simulace modulu US_CONTROL:
+
+Simulace modulu SEG_CONTROL:
+![seg_control_tb](https://github.com/user-attachments/assets/1a4a7b75-4b2d-4927-a5be-d9e1152bba04)
+
+Simulace modulu LED_CONTROL:
+
+Simulace modulu TOP_LEVEL:
 
 ### Praktická ukázka
 https://github.com/user-attachments/assets/3c3cfd26-f967-455a-bc51-f47ca1241e27
