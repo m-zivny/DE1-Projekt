@@ -11,7 +11,7 @@
 * [Abstrakt](#Abstrakt)
 
 * [Hardware](#Hardware)
-   - [Použitý Hardware](Použitý-Hardware)
+   - [Použitý Hardware](#Použitý-Hardware)
 * [Software](#Software)
 
 * [Simulace](#Simulace)
