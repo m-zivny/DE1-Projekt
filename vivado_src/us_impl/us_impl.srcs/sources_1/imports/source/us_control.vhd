@@ -57,7 +57,7 @@ begin
                         can_send <= '1';
                         echo_count <= echo_count + 1;
                     elsif(ECHO = '0' and can_send = '1') then
-                        echo_count <= echo_count/6;
+                        echo_count <= echo_count/5800;
                         state <= SEND;
                         can_send <='0';
                     else
