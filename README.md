@@ -72,7 +72,7 @@ Modul řídí RGB led která signalizuje obsazenost parkovacího místa. Vzdále
 
 
 #### [TOP LEVEL:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/top_level.vhd)
-V modulu TOP_LEVEL propojujeme jednotlivé dílční moduly nebo jejich instance.
+V modulu TOP_LEVEL propojujeme jednotlivé instance dílčních modulů. 
 ![top_level_v3](https://github.com/user-attachments/assets/484f4889-a973-4cfd-840d-006220e3396e)
 
 
