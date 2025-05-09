@@ -68,7 +68,7 @@ Neupravená verze modulu z počítačových cvičení. Převádí přijatý 4bit
 
 #### [LED_CONTROL:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/led_control.vhd)
 
-Modul řídí RGB led která signalizuje obsazenost parkovacího místa. Vzdálenosti získává z modulu US_CONTROL. Používáme 2 instance tohoto modulu.
+Modul řídí RGB LED, která signalizuje obsazenost parkovacího místa. Vzdálenosti získává z modulu US_CONTROL. Používáme 2 instance tohoto modulu.
 
 
 #### [TOP LEVEL:](https://github.com/m-zivny/DE1-Projekt/blob/main/source/top_level.vhd)
